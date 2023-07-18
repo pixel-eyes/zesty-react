@@ -5,8 +5,11 @@ import cabbage from './assets/image1.jpeg'
 import mango from './assets/image2.jpeg'
 import fig from './assets/image3.jpeg'
 import gaze from './assets/image4.jpeg'
+import peach from './assets/image5.jpeg'
+import avocado from './assets/image6.jpeg'
 
-const images = [ cabbage, mango, fig, gaze ];
+const images = [ cabbage, mango, fig, gaze,peach, avocado ];
+
 
 const App = () => {
   const [currentImage, setCurrentImage] = useState (0);
@@ -24,20 +27,22 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <div className="title">
+    <section>
+     <header>
         <h1>Zesty</h1>
         <h2>A photography project <br/>by Ella
         Fieldling
         </h2>
-        <h3>
+        </header>
+
+        <figure> 
+        <figcaption>
           {currentImage + 1} / {images.length}
-        </h3>
-      </div>
-      <div className="image-container">
+        </figcaption>
         <img alt="" src={images[currentImage]} onClick={handClick} />
-      </div>
-    </div>
+    </figure>
+
+    </section>
   );
 };
 
